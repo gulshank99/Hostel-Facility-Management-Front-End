@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        .opaque {
+            background: rgba(0, 0, 0, 0.75);
+            color: gainsboro;
+        }
+
+        .modal {
+            --bs-modal-width: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid p-3 mb-3 text-center opaque">
+        <div class="row justify-content-between">
+            <div class="col-4 p-2 fs-3" style="text-align: left;">
+                <a href="index.html" class="text-decoration-none text-light">HMS</a>
+            </div>
+            <div class="col-4 p-2 fs-3">
+                List of Students
+            </div>
+            <div class="col-4 d-flex justify-content-end">
+                <div class="dropdown">
+                    <div class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+
+                        <span class="fs-3 text-light"><i class="bi bi-person-circle"></i></span>
+                        <span id="userSpan" class="fs-6 p-2 text-light"></span>
+
+                    </div>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="#" id="logout">Logout</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-4 offset-4">
+                <form class="d-flex mb-3" role="search">
+                    <input class="form-control me-2" type="text" placeholder="Search" id="searchBox">
+                    <button class="btn btn-primary" type="submit" id="search"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
+            <div class="col-4 mb-3 d-flex justify-content-end">
+                <button class="btn btn-primary" id="switch">Click for inactive</button>
+            </div>
+        </div>
+        <!-- <div id="table"></div> -->
+        <div class="row overflow-auto mb-3 overflow-y-scroll" style="max-height: 480px;">
+
+            <table id="myTable" class="table opaque">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Rollno</th>
+                        <th>RoomNo</th>
+                        <th>Status</th>
+                        <th>FirstName</th>
+                        <th>MiddleName</th>
+                        <th>LastName</th>
+                        <th>Aadhaar No</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Course</th>
+                        <th>Gender</th>
+                        <th>Street</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Department</th>
+                        <th>Year</th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary" id="back">Back</button>
+        </div>
+
+        <div class="col-4 offset-4 text-center opaque fw-bolder ">
+            <p class="" id="res"></p>
+        </div>
+        <div class="opaque">
+            <p></p>
+
+        </div>
+
+        <!-- Modal for update -->
+
+        <div class="modal fade" id="exampleModalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="width: 800px;">
+                    <div class="modal-header bg-dark text-light col-12 text-center">
+                        <h1 class="modal-title col-12 fs-5" id="exampleModalLabel">Update Student Details</h1>
+                    </div>
+                    <div class="modal-body bg-dark">
+                        <div class="row">
+                            <div class="col-12 card p-0 bg-dark text-light opacity-75 mt-3 pt-3">
+                                <div class="col-10 offset-1 my-1">
+                                    <label for="firstName" class="form-label form-inline form-group">Full Name</label>
+
+                                    <div class="d-flex justify-content-between">
+                                        <div class="" style="width: 200px;">
+                                            <input type="text" class="form-control text-center" placeholder="First name"
+                                                aria-label="First name" required id="firstName" required="">
+                                        </div>
+                                        <div class="" style="width: 200px;">
+                                            <input type="text" class="form-control text-center"
+                                                placeholder="Middle name" aria-label="Middle name" id="middleName">
+                                        </div>
+                                        <div class="" style="width: 200px;">
+                                            <input type="text" class="form-control text-center" placeholder="Last name"
+                                                aria-label="Last name" id="lastName">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-10 offset-1 d-flex justify-content-between my-1">
+
+                                    <div style="width: 180px;">
+                                        <label for="contact" class="form-label">Contact No</label>
+                                        <input type="text" minlength="10" maxlength="10" class="form-control"
+                                            name="phone" placeholder="Enter your contact no" id="contact" required />
+                                    </div>
+
+                                    <div style="width: 180px;">
+                                        <label for="year" class="form-label">Year</label>
+                                        <input type="text" minlength="10" maxlength="10" class="form-control"
+                                            name="phone" placeholder="Enter year" id="year" required />
+                                    </div>
+
+                                    <div style="width: 180px;">
+                                        <label for="aadhaarno" class="form-label"> Aadhaar
+                                            Number</label>
+                                        <input type="text" minlength="12" maxlength="12" class="form-control"
+                                            name="phone" placeholder="Enter your aadhaar no" id="aadhaarno" required />
+                                    </div>
+                                </div>
+
+                                <div class="col-10 offset-1 d-flex justify-content-between my-1">
+
+                                    <div style="width: 180px;">
+                                        <label for="gender" class="form-label">Gender</label>
+                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                                            id="gender" required>
+                                            <option>--Select--</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div style="width: 180px;">
+                                        <label for="department" class="form-label">Department</label>
+                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="department" required="">
+                                            <option>--Select--</option>
+                                            <option value="CSE">CSE</option>
+                                            <option value="ECE">ECE</option>
+                                            <option value="ME">ME</option>
+                                            <option value="CE">CE</option>
+                                            <option value="EE">EE</option>
+                                            <option value="IT">IT</option>
+                                            <option value="AIML">AIML</option>
+                                        </select>
+                                    </div>
+
+                                    <div style="width: 180px;">
+                                        <label for="course" class=" form-label">Choose Course</label>
+                                        <select class="form-select form-select-sm form-select-inline-sm" id="course">
+                                            <option>--Select--</option>
+                                            <option value="B.Tech">B.Tech</option>
+                                            <option value="M.Tech">M.Tech</option>
+                                            <option value="BCA">BCA</option>
+                                            <option value="BBA">BBA</option>
+                                            <option value="MBA">MBA</option>
+                                            <option value="MCA">MCA</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-10 offset-1 my-1 d-flex justify-content-between">
+                                    <div class="" style="width: 300px;">
+                                        <label for="email" class="form-label">Email
+                                            ID</label>
+                                        <input type="email" class="form-control" id="email"
+                                            placeholder="Enter your email id" required>
+                                    </div>
+                                    <div class="" style="width: 300px;">
+                                        <label for="email" class="form-label">Roll</label>
+                                        <input type="text" class="form-control" id="roll"
+                                            placeholder="Enter your email id" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-10 offset-1 d-flex justify-content-between my-1">
+                                    <div class="" style="width: 200px;">
+                                        <label for="email" class="form-label">Street</label>
+                                        <input type="text" class="form-control" id="street"
+                                            placeholder="Enter your email id" required>
+                                    </div>
+                                    <div class="" style="width: 200px;">
+                                        <label for="email" class="form-label">City</label>
+                                        <input type="text" class="form-control" id="city"
+                                            placeholder="Enter your email id" required>
+                                    </div>
+                                    <div class="" style="width: 200px;">
+                                        <label for="email" class="form-label">State</label>
+                                        <input type="text" class="form-control" id="state"
+                                            placeholder="Enter your email id" required>
+                                    </div>
+                                </div>
+                                <div class="my-3 d-flex col-4 offset-4 justify-content-between">
+                                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                                        id="back">Back</button>
+                                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                                        id="edit">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for update ends here -->
+
+        <!-- Modal for delete confirmation -->
+        <div class="col-12 text-center">
+            <div class="modal fade" id="exampleModalDelete" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body bg-dark text-light">
+                            Do you really want to delete?
+                            <div class="my-3 d-flex col-4 offset-4 justify-content-between">
+                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                                    id="deleteNo">No</button>
+                                <button type="submit" class="btn btn-danger" data-bs-dismiss="modal"
+                                    id="deleteYes">Yes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/getStudent.js"></script>
+</body>
+
+</html>

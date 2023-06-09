@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Health Facility</title>
+    <!-- <style>
+        .opaque {
+            background: rgba(0, 0, 0, 0.75);
+            color: gainsboro;
+        }
+    </style> -->
+</head>
+
+<body>
+
+    <!-- <nav class="navbar navbar-expand-lg sticky-top navbar-dark opaque"> -->
+    <div class="container-fluid p-1 text-center" style="background-color: rgba(0, 0, 0, 0.9);">
+        <div class="row justify-content-between">
+            <div class="col-4 p-2" style="text-align: left;">
+                <a href="index.html" style="color: white;text-decoration: none; font-size: 30px;">HMS</a>
+            </div>
+            <div class="col-4 p-2" style="color: white;text-decoration: none;font-size: 30px;font-weight: 500;">
+                Health Facility
+            </div>
+            <div class="col-4 d-flex justify-content-end">
+                <div class="dropdown">
+                    <!-- <div class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="fs-3 text-light"><i class="bi bi-person-circle"></i></span>
+                        <span id="userSpan" class="fs-6 p-2 text-light"></span>
+                    </div> -->
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="#" id="logout">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-image: url(/Assets/aeclogin.jpg);  background-position: center  ;background-repeat: no-repeat;
+        background-size: cover; background-attachment: fixed; overflow: hidden;">
+
+
+        <div class="text-center row mt-3 mb-2 mx-2 my-2">
+            <div class="col-4 col-md-4 mb-4">
+                <div class="card h-100">
+                    <i class="fa fa-user-md fa-5x"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">ESI Hospital</h5>
+                        <p class="card-text mt-3"><a href="tel:+1234567890" target="_blank"><i class="fa fa-phone"></i>
+                                03412253946</a></p>
+
+                        <a href="https://www.google.com/maps/dir/23.7215022,86.9523943/E.S.I.+Hospital,+Sen+Raliegh+Rd,+Gobindapur,+Asansol,+West+Bengal+713305/@23.7151517,86.9491055,16z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x39f71f12cb045d77:0x3469e0d7b5b03833!2m2!1d86.9538036!2d23.7094555"
+                            class="btn btn-primary">Address</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 col-md-4 mb-4">
+                <div class="card h-100">
+                    <i class="fa fa-user-md fa-5x"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">HLG Hospital</h5>
+                        <p class="card-text mt-3"><a href="tel:03412256611" target="_blank"><i class="fa fa-phone"></i>
+                                0341 225 6611</a></p>
+
+                        <a href="https://www.google.com/maps?opi=89978449&lqi=ChNob3NwaXRhbCBpbiBhc2Fuc29sSOKItqWdr4CACFohEAAYABgCIhNob3NwaXRhbCBpbiBhc2Fuc29sKgQIAxAAkgEIaG9zcGl0YWyaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUXRjblJUTWxGM0VBRaoBUwoIL20vMGhwbnIQASoMIghob3NwaXRhbCgAMh4QASIa1wF8XpWt1IdZxcTDliVOPJelks1dcKYgT0gyFxACIhNob3NwaXRhbCBpbiBhc2Fuc29s&vet=12ahUKEwielPHE_IX_AhWLT2wGHSrcDZMQ8UF6BAgDEFY..i&lei=ktNpZJ6DN4ufseMPqri3mAk&cs=1&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=Kd--b9q2H_c5MVpnoEcgGZDT&daddr=Kanyapur,+Asansol,+West+Bengal+713302"
+                            class="btn btn-primary">Address</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 col-md-4 mb-4">
+                <div class="card h-100">
+                    <i class="fa fa-user-md fa-5x"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Hill View Hospital</h5>
+                        <p class="card-text mt-3"><a href="tel:+917942604546"><i class="fa fa-phone"></i>
+                                +917942604546</a></p>
+
+                        <a href="https://www.google.com/maps?opi=89978449&lqi=ChNob3NwaXRhbCBpbiBhc2Fuc29sSI-Gwarft4CACFohEAAYABgCIhNob3NwaXRhbCBpbiBhc2Fuc29sKgQIAxAAkgEIaG9zcGl0YWyqAVMKCC9tLzBocG5yEAEqDCIIaG9zcGl0YWwoADIeEAEiGtcBfF6VrdSHWcXEw5YlTjyXpZLNXXCmIE9IMhcQAiITaG9zcGl0YWwgaW4gYXNhbnNvbA&vet=12ahUKEwielPHE_IX_AhWLT2wGHSrcDZMQ8UF6BAgDEFY..i&lei=ktNpZJ6DN4ufseMPqri3mAk&cs=1&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KdGB3GR6H_c5MTEvvcbVnJAb&daddr=SB+Gorai+Rd,+opp.+Indian+Oil+Petrol+Pump,+Master+Para,+Islampur,+Pathak+Bari,+Asansol,+West+Bengal+713304"
+                            class="btn btn-primary">Address</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 col-md-4 mb-4">
+                <div class="card h-100">
+                    <i class="fa fa-user-md fa-5x"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Bless Hospital</h5>
+                        <p class="card-text mt-3"><a href="tel:+919732231621"><i class="fa fa-phone"></i>
+                                +918295673594</a></p>
+
+                        <a href="https://www.google.com/maps/dir//Bless+Hospital,+5,+Shakespeare+Sarani,+Gobindapur,+Asansol,+West+Bengal+713302/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x39f71fa1f430976f:0xf4043fde6ed0cdba?sa=X&ved=2ahUKEwiIxYCegIb_AhUAcWwGHXqXAHUQ48ADegQIEhAN"
+                            class="btn btn-primary">Address</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 col-md-4 mb-4">
+                <div class="card h-100">
+                    <i class="fa fa-user-md fa-5x"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">ALMC MULTI SPECIALITY HOSPITAL</h5>
+                        <p class="card-text mt-3"><a href="tel: +918295673594"><i class="fa fa-phone"></i>
+                                +918295673594</a></p>
+
+                        <a href="https://www.google.com/maps/dir//ALMC+MULTI+SPECIALITY+HOSPITAL,+Shristinagar,+Asansol,+West+Bengal+713305/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x39f71f1a9f74053b:0x2e756b10281da026?sa=X&ved=2ahUKEwiIxYCegIb_AhUAcWwGHXqXAHUQ48ADegQIERAM"
+                            class="btn btn-primary">Address</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 col-md-4 mb-4">
+                <div class="card h-100">
+                    <i class="fa fa-user-md fa-5x"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Punardristee hospital</h5>
+                        <p class="card-text mt-3"><a href="tel:03412252233"><i class="fa fa-phone"></i>
+                                0341-2302388</a></p>
+                        <a href="https://www.google.com/maps/dir//Punardristee+Eye+and+General+hospital,+Lions+Club+Rd,+Kanyapur,+Asansol,+West+Bengal+713341/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x39f71f0df6b64581:0xf2044564ee698b16?sa=X&ved=2ahUKEwiIxYCegIb_AhUAcWwGHXqXAHUQ48ADegQIDxAM"
+                            class="btn btn-primary">Address</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="m-4 d-flex justify-content-center">
+            <div class="col-5 d-flex justify-content-center">
+                <button type="button" class="btn btn-warning px-4 py-2" id="back"
+                    style="font-size: medium;font-weight: 700;">Back</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-0" style="background-color:rgba(0, 0, 0, 0.9); color:#FFF">
+        <div style="text-align:center">
+            <center>
+                <p class="m-0 fs-5 text-white"> <strong>&copy;Asansol Engineering College</strong>. All Rights
+                    Reserved.<br />Designed &amp; Developed By: Aman, Ankit, Lokesh & Gulshan (CSE 2019-23)
+                </p>
+            </center>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        let backBtn = document.getElementById("back");
+        backBtn.onclick = () => {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+
+
+</html>

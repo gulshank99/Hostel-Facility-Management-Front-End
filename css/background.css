@@ -1,0 +1,9 @@
+body{
+    background-image: url(/Assets/aeclogin.jpg);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-y: auto;
+}
